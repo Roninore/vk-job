@@ -8,7 +8,7 @@
     "prod": "cross-env NODE_ENV=prod node index.js",
     "test": "cross-env NODE_ENV=dev node test.js",
     "runadmin-dev": "cross-env NODE_ENV=dev py admin\\djangoAdmin\\manage.py runserver",
-    "runadmin": "cross-env NODE_ENV=prod python3.9 admin\\djangoAdmin\\manage.py runserver"
+    "runadmin": "cross-env NODE_ENV=prod python3.9 admin/djangoAdmin/manage.py runserver"
   },
   "author": "",
   "license": "ISC",
