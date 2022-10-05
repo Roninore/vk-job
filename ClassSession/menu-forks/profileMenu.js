@@ -16,7 +16,7 @@ async function profileMenu() {
         this.mainMenu)
     return
     } catch(e) {
-        this.error(this.mainMenu)
+        this.error()
         console.log(e)
     }
 }
@@ -50,7 +50,7 @@ async function myForm() {
             this.mainMenu)
         return
         } catch(e) {
-            this.error(this.mainMenu)
+            this.error()
             console.log(e)
         }
 }
@@ -74,7 +74,7 @@ async function deleteVacancy(params = {}) {
     catch(e) {
         this.vacancyToDeleteId = undefined
         console.log(e)
-        this.error(this.mainMenu)
+        this.error()
     }
 }
 async function acceptDeletionVacancy(params) {
@@ -92,7 +92,7 @@ async function acceptDeletionVacancy(params) {
     catch(e) {
         this.vacancyToDeleteId = undefined
         console.log(e)
-        this.error(this.mainMenu)
+        this.error()
     }
 }
 
@@ -135,7 +135,7 @@ async function myVacancies(params = {}) {
             this.mainMenu)
         return
         } catch(e) {
-            this.error(this.mainMenu)
+            this.error()
             console.log(e)
         }
 }

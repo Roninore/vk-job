@@ -3,10 +3,13 @@ const Keyboards = require('../const-data/Keyboards')
 
 async function mainMenu(params = {startFlag: false}) {
     try {
+        if (params.prevMessages) this.messages = params.prevMessages
+        else this.messages = []
+
         this.clear()
 
-        this.messages = [{ text: Messages.greeting(this.user.first_name), keyboard: Keyboards.empty },
-        { text: Messages.mainMenu, keyboard:Keyboards.mainMenu }]
+        this.messages = this.messages.concat([{ text: Messages.greeting(this.user.first_name), keyboard: Keyboards.empty },
+        { text: Messages.mainMenu, keyboard:Keyboards.mainMenu }])
         
 
         if (!params.hasOwnProperty('startFlag')) params.startFlag = false

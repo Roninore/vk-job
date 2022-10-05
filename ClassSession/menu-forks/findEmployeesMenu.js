@@ -154,7 +154,7 @@ async function end_fe() {
             this.mainMenu)
     //sendToModeration
     } catch(e) {
-        this.error(this.mainMenu)
+        this.error()
         console.log('Erorr on end_fe',e)
     }
     return

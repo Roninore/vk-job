@@ -8,15 +8,14 @@ function badChoice(menuFunction = function() {return null}) {
     return
     } catch (e) {
         console.log('Error on badChoice', e)
-        this.error(this.mainMenu)
+        this.error()
         return
     }
 }
-function error(menuFunction = function() {return null}) {
+function error(params = {menuFunction: undefined}) {
     try {
-    this.messages = [{text: 'Произошла ошибка!',keyboard:Keyboards.empty}]
-    this.done()
-    menuFunction.call(this)
+        if (!params.menuFunction) params.menuFunction = this.mainMenu
+        params.menuFunction.call(this,{prevMessages:[{text: 'Произошла ошибка!',keyboard:Keyboards.empty}]})
     return 
 } catch (e) {
         console.log('Error on error function', e)

@@ -180,7 +180,7 @@ async function end_fj() {
         this.mainMenu)
     return
     } catch(e) {
-        this.error(this.mainMenu)
+        this.error()
         console.log('Erorr on end_fj',e)
     }
 }
