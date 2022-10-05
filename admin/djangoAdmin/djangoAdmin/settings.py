@@ -14,6 +14,9 @@ import json
 from pathlib import Path
 import os
 
+CONFIG_FILE = json.load(open('/var/work/secretConfig.json'))
+print(CONFIG_FILE)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGOKEY']
+SECRET_KEY = CONFIG_FILE['djangoKey']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ['NODE_ENV'] == 'dev' else False 
+DEBUG = False 
 
 ALLOWED_HOSTS = ['1.1.1.1', '127.0.0.1','localhost']
 
@@ -83,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'vkjob', 
         'USER': 'postgres', 
-        'PASSWORD': os.environ['DBPASSWORD'],
-        'HOST': os.environ['HOST'] if os.environ['NODE_ENV'] == 'dev' else 'localhost', 
+        'PASSWORD': CONFIG_FILE['dbPassword'],
+        'HOST': 'localhost', 
         'PORT': '5432',
     }
 }
