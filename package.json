@@ -1,0 +1,20 @@
+{
+  "name": "vk-job-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev node index.js",
+    "prod": "cross-env NODE_ENV=prod node index.js",
+    "test": "cross-env NODE_ENV=dev node test.js",
+    "runadmin": "py admin\\djangoAdmin\\manage.py runserver"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "concurrently": "^7.4.0",
+    "cross-env": "^7.0.3",
+    "pg": "^8.8.0"
+  }
+}
