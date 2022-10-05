@@ -3,7 +3,7 @@ const Keyboards = require('../const-data/Keyboards')
 module.exports = async function answerModeratorMenu(params) { // Написать
     try {
         this.messages = [{text:'Введите текст сообщения \n!Введите всё в одном сообщении',keyboard: Keyboards.cancel}]
-        const vacancy = await global.db.getVacancy(params.message.payload.id)
+        const vacancy = await global.db.getVacancy(params.ctx.message.payload.id)
         const ctx = await this.waitNextMessage()
 
 
@@ -16,7 +16,7 @@ module.exports = async function answerModeratorMenu(params) { // Написат�
         }
 
         if (!ctx.message.payload) {
-            const vacancy = await global.db.getVacancy(params.message.payload.id)
+            const vacancy = await global.db.getVacancy(params.ctx.message.payload.id)
             const moderators = await global.db.moderators.map(el => {return el.data.id})
             global.bot.mailing(moderators,`Сообщение по заявке (Вакансия #${vacancy.data.id})`,
             {forward_messages: ctx.message.id,keyboard:{

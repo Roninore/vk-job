@@ -57,7 +57,7 @@ class Session extends EventEmitter{
                     'answer-moderator': this.answerModeratorMenu,
                     'response': this.responseMenu
                 }
-                actions[params.ctx.message.payload.btn].call(this,params.ctx)
+                actions[params.ctx.message.payload.btn].call(this,{ctx:params.ctx})
             }
             catch(e) {
                 console.log('Error on start session',e)

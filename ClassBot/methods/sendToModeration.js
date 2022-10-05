@@ -9,7 +9,7 @@ function getDescription(vacancy) {
     }
     return `Тип: ${jobtypes[vacancy.jobtype]}
 Описание: ${vacancy.category}
-${time[data.jobtype]} ${vacancy.time}
+${time[vacancy.jobtype]} ${vacancy.time}
 Нас. пункт: ${vacancy.place}
 Оплата: ${vacancy.cost}
 Имя: ${vacancy.name}

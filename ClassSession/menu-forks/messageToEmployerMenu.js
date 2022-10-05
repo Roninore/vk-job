@@ -4,7 +4,7 @@ module.exports = async function messageToEmployerMenu(params) { // Кнопка 
     try {
         
         this.messages = [{text:'Введите текст сообщения \n(!!введите его в одном сообщении!!)',keyboard: Keyboards.cancel}]
-        const vacancy = await global.db.getVacancy(params.message.payload.id)
+        const vacancy = await global.db.getVacancy(params.ctx.message.payload.id)
         const ctx = await this.waitNextMessage()
 
         if (vacancy.data.closed == true || vacancy.data.passed == true) {

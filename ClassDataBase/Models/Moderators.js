@@ -3,7 +3,7 @@ const Model = require('./Model.js')
 class Responses extends Model {
     constructor(params) {
         super()
-        this.tableName = 'moderators'
+        this.tableName = 'vkjob_moderators'
         this.pk = 'id'
         this.fields = {
             id: {type: Number,pk:true },

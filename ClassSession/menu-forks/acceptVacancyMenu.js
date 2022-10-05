@@ -3,7 +3,7 @@ const Keyboards = require('../const-data/Keyboards')
 module.exports = async function acceptVacancyMenu(params) {
     try {
         this.messages = [{text:'Введите что угодно, чтобы подтвердить',keyboard: Keyboards.cancel}]
-        const vacancy = await global.db.getVacancy(params.message.payload.id)
+        const vacancy = await global.db.getVacancy(params.ctx.message.payload.id)
         const ctx = await this.waitNextMessage()
 
         if (vacancy.data.closed == true || vacancy.data.passed == true) {

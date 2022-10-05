@@ -3,7 +3,7 @@ const Keyboards = require('../const-data/Keyboards')
 module.exports = async function rejectVacancyMenu(params) {
     try {
         this.messages = [{text:'Введите текст сообщения \n!Введите всё в одном сообщении',keyboard: Keyboards.cancel}]
-        const vacancy = await global.db.getVacancy(params.message.payload.id)
+        const vacancy = await global.db.getVacancy(params.ctx.message.payload.id)
         const ctx = await this.waitNextMessage()
         
 
