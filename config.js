@@ -8,7 +8,7 @@ module.exports = {
     group_id: process.env.NODE_ENV == 'dev' ? '215950497' : '213245913',
     
     dbuser: 'postgres',
-    dbhost: process.env.NODE_ENV == 'dev' ? '185.240.103.244' : 'localhost',
+    dbhost: process.env.NODE_ENV == 'dev' ? secretConfig.host : 'localhost',
     dbname: 'vkjob',
     dbpassword: secretConfig.dbPassword,
     dbport: 5432

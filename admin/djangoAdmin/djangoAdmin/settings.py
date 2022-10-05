@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = CONFIG_FILE['djangoKey']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ['NODE_ENV'] == 'dev' else False 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'vkjob', 
         'USER': 'postgres', 
         'PASSWORD': CONFIG_FILE['dbPassword'],
-        'HOST': '185.240.103.244', 
+        'HOST': CONFIG_FILE['host'] if os.environ['NODE_ENV'] == 'dev' else 'localhost', 
         'PORT': '5432',
     }
 }
