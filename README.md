@@ -4,7 +4,8 @@
 ## Stack
 - PostgreSQL
 - VK LongPoll API
-- NodeJS
+- NodeJS (сервер бота)
+- Django.py (админка)
 
 ## Classes
 - Bot (экземпляр бота и его данные)
