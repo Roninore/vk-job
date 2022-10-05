@@ -9,7 +9,7 @@ class Executors(models.Model):
     category = models.CharField(max_length=300,verbose_name='Описание')
     time = models.CharField(max_length=100,verbose_name='Время/график')
     place = models.CharField(max_length=100,verbose_name='Место')
-    other = models.CharField(max_length=20,verbose_name='Доп. информация')
+    other = models.CharField(max_length=100,verbose_name='Доп. информация')
     closed = models.BooleanField(default=False,verbose_name='Закрыто')
 
     def __str__(self):
