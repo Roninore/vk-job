@@ -1,3 +1,4 @@
 node_modules
 secretConfig.json
 admin/venv
+nonGit
