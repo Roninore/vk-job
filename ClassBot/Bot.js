@@ -27,6 +27,7 @@ class Bot extends EventEmitter{
         this.admin = require('./admin/admin')
         this.query = require('./admin/commands/query')
         this.mail = require('./admin/commands/mail')
+        this.stop = require('./admin/commands/stop')
     }
 
 }

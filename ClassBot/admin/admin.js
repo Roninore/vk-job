@@ -14,7 +14,8 @@ function admin(ctx) {
 
     const commands = {
         'mail':this.mail,
-        'query':this.query
+        'query':this.query,
+        'stop': this.stop
     }
     console.log(command,commands)
     if (!commands.hasOwnProperty(command)) return false
